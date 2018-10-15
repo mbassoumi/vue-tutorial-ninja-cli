@@ -2,15 +2,16 @@
   <div>
     <form-helper>
       <div slot="form-header">
-        <h3>Form Two - Log In</h3>
-        <p>Enter your details to log-in</p>
+        <h3>Form One - Contact Us</h3>
+        <p>Fill in this form to contact us</p>
       </div>
       <div slot="form-fields">
-        <input type="text" placeholder="username" required />
-        <input type="password" placeholder="password" required />
+        <input type="text" placeholder="name" required />
+        <label>Your Message:</label>
+        <textarea></textarea>
       </div>
       <div slot="form-controls">
-        <button v-on:click="handleSubmit">Login</button>
+        <button v-on:click="handleSubmit">Send</button>
       </div>
     </form-helper>
   </div>
@@ -18,7 +19,7 @@
 
 <script>
   // Imports
-  import formHelper from './formHelper.vue'
+  import formHelper from './FormHelper.vue'
   export default {
     components: {
       'form-helper': formHelper
@@ -29,9 +30,9 @@
     },
     methods: {
       handleSubmit: function(){
-        alert('thanks for logging in (form two)');
+        alert('thanks for submitting form one & contacting us');
       }
-    }
+    },
   }
 </script>
 
