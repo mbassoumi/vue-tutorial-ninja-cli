@@ -1,8 +1,9 @@
 <template>
   <div>
-    <component v-bind:is="component"></component>
     <button v-if="component != 'ninjas-index'" @click="component = 'ninjas-index'">Show Ninjas</button>
     <button v-if="component != 'dynamic-components'" @click="component = 'dynamic-components'">Show Dynamic Components</button>
+    <button v-if="component != 'blog-index'" @click="component = 'blog-index'">Show Blog (input binding)</button>
+    <component v-bind:is="component"></component>
   </div>
 </template>
 
@@ -10,11 +11,13 @@
 
   import DynamicComponents from './components/dynamicComponents/DynamicComponents.vue';
   import NinjasIndex from './components/ninjas/NinjasIndex.vue';
+  import blogIndex from './components/InputBinding/blogIndex';
 
   export default {
     components: {
       'dynamic-components': DynamicComponents,
       'ninjas-index': NinjasIndex,
+      'blog-index': blogIndex,
     },
     data() {
       return {
@@ -28,7 +31,7 @@
 
 <style scoped>
   button {
-    background-color: #4CAF50; /* Green */
+    background-color: #f44336; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
